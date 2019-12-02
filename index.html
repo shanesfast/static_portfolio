@@ -1,0 +1,152 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="prism-atom-dark.css" type="text/css" media="screen">
+
+
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript" src="prism.ruby.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="line-numbers">
+    <div class="about-container">
+      <div class="about">
+        <img src="me.jpg" class="me">
+        <h1>Shane Quick</h1>
+        <h2>FULLSTACK DEVELOPER</h2>
+        <hr class="orange_bar" />
+        <p class="bio">
+          Shane is many things. He is a musician, an odd man.
+          He is a lover of funny things, An appreciator of nature.
+          A friend/caregiver of a dog, not a friend of olives.
+          What you really want to know, though, is that he is passionate
+          about building applications. Front-end, beck-end, he does it all.
+          He is I, and I want to be there for you!
+        </p>
+      </div>
+    </div>
+    <div class="code_snippet_header_container">
+      <h3>Code Snippets</h3>
+      <hr class="blue_bar" />
+    </div>
+    <div class="code_snippet_container">
+      <div class="box">
+        <h4>Temperature Conversion</h4>
+        <p>
+          This Ruby program will prompt the user for a temperature
+          in degrees Fahrenheit and let the user know what the
+          corresponding temperature is in Celsius.
+        </p>
+      </div>
+      <div class="box">
+<pre><code class="language-ruby">def f_to_c(fahren)
+  fahren = fahren.to_f
+  fahren = fahren - 32
+  celsius = fahren * 5/9
+  return celsius.round(2)
+end
+
+print &quot;Enter a temperature in Fahrenheit: &quot;
+temp = gets.chomp
+
+puts &quot;In Celsius, that would be approximately #{f_to_c(temp)}.&quot;</code></pre>
+      </div>
+      <br class="clear" />
+
+      <div class="box">
+<pre><code class="language-ruby">print "Enter a whole number: "
+input = gets.chomp.to_i
+
+right_digit = input % 10
+
+def ordinal(right, number)
+    og_number = number
+
+    if number > 99
+        number = number.to_s
+        number = number[-2]
+        number = number.to_i
+    else
+        number = number.to_s
+        number = number[0]
+        number = number.to_i
+    end
+
+    if number == 1 && og_number > 1
+        return og_number.to_s + "th"
+    end
+
+    if right == 1
+        return og_number.to_s + "st"
+    elsif right == 2
+        return og_number.to_s + "nd"
+    elsif right == 3
+        return og_number.to_s + "rd"
+    else
+     return og_number.to_s + "th"
+    end
+end
+
+puts "That's the #{ordinal(right_digit, input)} number!"</code></pre>
+      </div>
+      <div class="box">
+        <h4>Ordinal Challenge</h4>
+        <p>
+          This Ruby program will convert a plain number
+          to the ordinal of the number. So for example,
+          if the user enters 2, it will display 2nd, if
+          the user enters 3, it will display 3rd, etc.
+        </p>
+      </div>
+      <br class="clear" />
+
+      <div class="box">
+        <h4>Foobar</h4>
+        <p>
+          This Ruby program is an adaptation of a classic technical
+          interview problem which displays sequences
+          of the Foobar pattern.
+        </p>
+      </div>
+      <div class="box">
+<pre><code class="language-ruby">print &quot;How many items do you want to see?: &quot;
+items = gets.chomp.to_i
+x = 0
+numbers = []
+
+while x &lt; items do
+    x = x + 1
+    numbers &lt;&lt; x
+end
+
+
+def foobar(number)
+    output = []
+    number.each do |digit|
+        if digit % 3 == 0
+            if digit % 5 == 0
+                output &lt;&lt; &quot;Foobar!&quot;
+            else
+                output &lt;&lt; &quot;Foo&quot;
+            end
+        elsif digit % 5 == 0
+                output &lt;&lt; &quot;Bar&quot;
+        else
+            output &lt;&lt; digit
+        end
+    end
+    print output
+    puts &quot;&quot;
+end
+
+foobar(numbers)</code></pre>
+      </div>
+      <br class="clear" />
+    </div>
+  </body>
+
+</html>
