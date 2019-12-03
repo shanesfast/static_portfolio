@@ -58,9 +58,36 @@ h4 {
   color: #3eb69a;
 }
 
+.title-splash {
+  background-color: rgba(70,127,183,0.9);
+}
+
 p {
   text-align: center;
   color: #FFF;
+}
+
+.black-text {
+  color: #000;
+}
+
+.projects-container {
+  background: url('bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.projects-container .box {
+  background-color: rgba(70,127,183,0.9);
+  margin-bottom: 20%;
+}
+
+.projects-container .orange_bar {
+  margin-bottom: 2%;
 }
 
 .about-container {
@@ -133,4 +160,8 @@ p {
 
 .clear {
   clear: both;
+}
+
+.full-width {
+  width: 100%;
 }
